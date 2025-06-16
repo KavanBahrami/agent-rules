@@ -3,7 +3,7 @@
 Perform comprehensive code quality and security checks.
 
 ## Primary Task:
-Run `npm run check` (or project-specific check command) and resolve any resulting errors.
+Run Unity or .NET quality checks (`dotnet test`, `dotnet format`, or Unity Test Runner in batch mode) and resolve any resulting errors.
 
 ## Important:
 - DO NOT commit any code during this process
@@ -11,12 +11,12 @@ Run `npm run check` (or project-specific check command) and resolve any resultin
 - Focus only on fixing issues identified by checks
 
 ## Common Checks Include:
-1. **Linting**: Code style and syntax errors
-2. **Type Checking**: TypeScript/Flow type errors
-3. **Unit Tests**: Failing test cases
-4. **Security Scan**: Vulnerability detection
-5. **Code Formatting**: Style consistency
-6. **Build Verification**: Compilation errors
+1. **Linting**: C# code style and syntax errors
+2. **Static Analysis**: .NET analyzers and Roslyn rules
+3. **Unit Tests**: Failing test cases via `dotnet test` or Unity Test Runner
+4. **Security Scan**: Vulnerability detection (e.g., `dotnet list package --vulnerable`)
+5. **Code Formatting**: Consistency via `dotnet format`
+6. **Build Verification**: Successful Unity project build
 
 ## Process:
 1. Run the check command
@@ -29,9 +29,10 @@ Run `npm run check` (or project-specific check command) and resolve any resultin
 4. Re-run checks after each fix
 5. Continue until all checks pass
 
-## For Different Project Types:
-- **JavaScript/TypeScript**: `npm run check` or `yarn check`
-- **Python**: `black`, `isort`, `flake8`, `mypy`
-- **Rust**: `cargo check`, `cargo clippy`
-- **Go**: `go vet`, `golint`
-- **Swift**: `swift-format`, `swiftlint`
+## Unity Specific Notes:
+- Use `dotnet format` to fix styling and `dotnet build` to validate C# compilation.
+- Run tests with `dotnet test` or the Unity Test Runner in batch mode:
+  ```bash
+  unity -batchmode -nographics -runTests -testPlatform PlayMode -projectPath <path>
+  ```
+- Consider static analysis tools like [Roslyn analyzers](https://github.com/dotnet/roslyn-analyzers) for additional checks.

@@ -13,7 +13,7 @@ This folder contains recommended AI assistant rules and documentation sourced fr
 - `pr-review.mdc` – Multi-perspective pull request review checklist.
 - `create-docs.mdc` – Steps for generating thorough documentation.
 - `mermaid.mdc` – Generate Mermaid diagrams for visualizing systems.
-- `screenshot-automation.mdc` – AppleScript patterns for automated screenshots.
+ - `screenshot-automation.mdc` – Unity C# patterns for automated screenshots.
 
 ## Usage
 1. Place desired `.mdc` files in your project's `.cursor/rules/` directory.
