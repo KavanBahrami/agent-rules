@@ -55,7 +55,7 @@ Links to related documentation
 
 ## Output Formats:
 - Markdown for general documentation
-- JSDoc/TSDoc for code comments
+ - C# XML documentation comments
 - API documentation format
 - README files
 - Architecture decision records (ADRs)
